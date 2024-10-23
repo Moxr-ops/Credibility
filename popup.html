@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>可信度系数计算器</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      width: 350px;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    .container {
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #2196F3;
+      text-align: center;
+    }
+    #inputField {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+    #inputField:focus {
+      border-color: #2196F3;
+      outline: none;
+    }
+    #calculateButton {
+      width: 100%;
+      padding: 10px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #calculateButton:hover {
+      background-color: #1976D2;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: 500;
+      text-align: center;
+    }
+    #details {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #666;
+    }
+    #debug {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #999;
+      border-top: 1px solid #eee;
+      padding-top: 10px;
+    }
+    .loader {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #3498db;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+      display: none;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>可信度系数计算器</h1>
+    <input type="text" id="inputField" placeholder="请输入需要评估的信息">
+    <button id="calculateButton">计算可信度</button>
+    <div class="loader" id="loader"></div>
+    <div id="result"></div>
+    <div id="details"></div>
+    <div id="debug"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
