@@ -1,9 +1,10 @@
 {
-    "extName": {
-      "message": "可信度系数计算器"
-    },
-    "extDescription": {
-      "message": "计算输入信息的可信度"
-    }
+  "extName": {
+    "message": "可信度系数计算器",
+    "description": "扩展名称"
+  },
+  "extDescription": {
+    "message": "计算信息的可信度系数",
+    "description": "扩展描述"
   }
-  
+}

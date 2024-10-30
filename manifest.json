@@ -4,21 +4,41 @@
   "version": "1.0",
   "description": "__MSG_extDescription__",
   "default_locale": "zh_CN",
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
-    }
-  },
   "permissions": [
-    "activeTab",
     "storage",
-    "scripting"
+    "activeTab",
+    "scripting",
+    "tabs"
   ],
   "host_permissions": [
-    "https://www.bing.com/*"
+    "<all_urls>",
+    "https://cn.bing.com/*"
   ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "__MSG_extName__"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content-script.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
   "options_page": "options.html"
 }
